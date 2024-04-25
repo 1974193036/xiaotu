@@ -73,4 +73,86 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(144 147 153 / 30%);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #b6b7b9;
+  }
+}
+
+.root {
+  @apply flex min-h-screen w-full flex-col bg-white lg:flex-row;
+}
+
+.root-container {
+  @apply mt-16 flex-1 overflow-auto py-4 lg:min-h-screen lg:py-8 lg:ml-72
+}
+
+/* ========================================== TAILWIND STYLES */
+@layer utilities {
+  /* ===== UTILITIES */
+  .wrapper {
+    @apply max-w-[1850px] mx-auto px-5 md:px-10 w-full text-dark-400 p-16-regular;
+  }
+
+  .p-16-regular {
+    @apply font-normal text-[16px] leading-[140%];
+  }
+
+  .p-16-semibold {
+    @apply font-semibold text-[16px] leading-[140%];
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  /* Sidebar Component */
+  .sidebar {
+    @apply hidden min-h-screen w-72 bg-white p-5 pr-0 shadow-md shadow-purple-200/50 lg:flex lg:fixed lg:bottom-0 lg:top-0;
+  }
+
+  .sidebar-logo {
+    @apply flex items-center gap-2 md:py-2 h-[45px];
+  }
+
+  .sidebar-nav {
+    @apply h-full flex-col justify-between pr-5 md:flex md:flex-1 md:gap-4 md:overflow-x-hidden md:overflow-y-auto;
+  }
+
+  .sidebar-nav_elements {
+    @apply hidden w-full flex-col items-start gap-2 md:flex;
+  }
+
+  .sidebar-nav_element {
+    @apply p-16-semibold cursor-pointer text-gray-700 w-full whitespace-nowrap rounded-full transition-all duration-100 hover:bg-purple-100 hover:shadow-inner;
+  }
+
+  .sidebar-nav_element.active {
+    @apply text-white bg-gradient-to-r from-[#7B79FF] to-[#502EFF];
+  }
+
+  .sidebar-link {
+    @apply p-16-semibold flex items-end gap-4 p-3;
+  }
+
+  /* Header Component */
+  .header {
+    @apply flex-between fixed left-0 h-16 w-full border-b-4 border-purple-100 bg-white p-5 lg:left-72;
+  }
 }
