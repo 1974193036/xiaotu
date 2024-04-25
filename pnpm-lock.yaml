@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@radix-ui/react-dialog': ^1.0.5
+  '@radix-ui/react-slot': ^1.0.2
   '@types/node': ^20
   '@types/react': ^18
   '@types/react-dom': ^18
@@ -21,6 +22,7 @@ specifiers:
 
 dependencies:
   '@radix-ui/react-dialog': 1.0.5_pririwar4m3afwc3lk45uql2te
+  '@radix-ui/react-slot': 1.0.2_7mazomva57u3e4dfbc62fsc6ny
   class-variance-authority: 0.7.0
   clsx: 2.1.1
   lucide-react: 0.373.0_react@18.2.0
