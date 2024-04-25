@@ -180,3 +180,135 @@ export async function getNavApi() {
     }
   ]
 }
+
+// 获取收买寄数据
+export async function getTopNavApi() {
+  return [
+    {
+      id: 'shou',
+      type: '收',
+      children: [
+        {
+          id: 'biying',
+          title: '必应搜索',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'douyin',
+          title: '抖音',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'jd',
+          title: '京东',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'aqy',
+          title: '爱奇艺',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'wph',
+          title: '唯品会',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'mhxy',
+          title: '梦幻西游',
+          href: 'https://www.baidu.com',
+          icon: ''
+        }
+      ]
+    },
+    {
+      id: 'mai',
+      type: '买',
+      children: [
+        {
+          id: 'xclx',
+          title: '携程旅行',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'tm',
+          title: '天猫',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'bosszp',
+          title: 'boss直聘',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'tbw',
+          title: '淘宝网',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: '9377yy',
+          title: '9377页游',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'txsp',
+          title: '腾讯视频',
+          href: 'https://www.baidu.com',
+          icon: ''
+        }
+      ]
+    },
+    {
+      id: 'ji',
+      type: '寄',
+      children: [
+        {
+          id: '58tc',
+          title: '58同城',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: '37yx',
+          title: '37游戏',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: '51yy',
+          title: '51夜游',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'atb',
+          title: '爱淘宝',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'tmcs',
+          title: '天猫超市',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'msnzg',
+          title: 'MSN中国',
+          href: 'https://www.baidu.com',
+          icon: ''
+        }
+      ]
+    }
+  ]
+}
