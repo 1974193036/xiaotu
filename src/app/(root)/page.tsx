@@ -1,6 +1,8 @@
 import { getTopNavApi } from '@/actions'
 import Search from '@/components/shared/Search'
 import TopNav from '@/components/shared/TopNav'
+import News from '@/components/shared/News'
+
 
 export default async function Home() {
   const dataSource = await getTopNavApi()
@@ -28,15 +30,17 @@ export default async function Home() {
       </div>
       <div className="wrapper-inner">
         <div className="top-container">
-          <div className="top-left">
+          <div className="top-left" id="top-left">
             {dataSource.map((item) => {
               return <TopNav key={item.id} type={item.type} list={item.children} />
             })}
           </div>
-          <div className="top-right bg-red-500">热点资讯</div>
+          <div className="top-right">
+            <News />
+          </div>
         </div>
 
-        <div className="text-[30px] h-[600px] bg-blue-100 mt-10">回家</div>
+        <div className="mt-5 lg:mt-0 text-[30px] h-[600px] bg-blue-300">回家</div>
       </div>
     </>
   )

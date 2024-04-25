@@ -223,6 +223,18 @@ export async function getTopNavApi() {
           title: '梦幻西游',
           href: 'https://www.baidu.com',
           icon: ''
+        },
+        {
+          id: 'dixiacheng',
+          title: '地下城',
+          href: 'https://www.baidu.com',
+          icon: ''
+        },
+        {
+          id: 'yingxiong',
+          title: '英雄联盟',
+          href: 'https://www.baidu.com',
+          icon: ''
         }
       ]
     },
@@ -309,6 +321,51 @@ export async function getTopNavApi() {
           icon: ''
         }
       ]
+    }
+  ]
+}
+
+// 获取新闻数据
+export async function getNewsApi() {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 2000)
+  })
+  return [
+    {
+      id: '111',
+      title: '神十八发射取得圆满成功神十八发射取得圆满成功神十八发射取得圆满成功'
+    },
+    {
+      id: '222',
+      title: '职高女孩逆袭成双一流大学研究生'
+    },
+    {
+      id: '333',
+      title: '解码首季经济成绩单'
+    },
+    {
+      id: '444',
+      title: '老人被宠物狗撕咬 手中握刀不舍得砍'
+    },
+    {
+      id: '555',
+      title: '居民家中储存10吨53度白酒被罚'
+    },
+    {
+      id: '666',
+      title: '孙子举报爷爷种罂粟？民警：虞美人'
+    },
+    {
+      id: '777',
+      title: '奶凶奶凶的交警姐姐找到了'
+    },
+    {
+      id: '888',
+      title: '深圳部分区域将取消限购不实'
+    },
+    {
+      id: '999',
+      title: '夫妻养2.8万只鸡 为省人工自己捡蛋',
     }
   ]
 }

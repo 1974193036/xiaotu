@@ -4,21 +4,18 @@ import { useState, KeyboardEvent } from 'react'
 import Image from 'next/image'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { openWindowBaidu } from '@/lib/openWindowBaidu'
 
 const SiderBar = () => {
   const [inputValue, setInputValue] = useState('')
 
-  const openWindow = (value: string) => {
-    window.open(`https://www.baidu.com/s?wd=${value}`)
-  }
-
   const handleSearch = () => {
-    openWindow(inputValue)
+    openWindowBaidu(inputValue)
   }
 
   const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      openWindow(inputValue)
+      openWindowBaidu(inputValue)
     }
   }
 
@@ -34,7 +31,6 @@ const SiderBar = () => {
         variant="destructive"
         className="search-button"
         onClick={handleSearch}
-        type="submit"
       >
         <Image
           src="/assets/icons/search.svg"
