@@ -103,7 +103,8 @@
 @layer utilities {
   /* ===== UTILITIES */
   .wrapper {
-    @apply px-5 md:px-10 w-full text-dark-400 p-16-regular;
+    /* @apply px-5 md:px-10 w-full text-dark-400 p-16-regular; */
+    @apply w-full text-dark-400 p-16-regular;
   }
 
   .wrapper-inner {
@@ -178,7 +179,7 @@
 
   /* Search Component */
   .search-container {
-    @apply py-[120px] relative -mx-5 md:-mx-10 text-white bg-[length:400%] bg-[0_100%] bg-gradient-to-r from-[#5C45FF] via-violet-500 to-purple-700;
+    @apply py-[120px] relative text-white bg-[length:400%] bg-[0_100%] bg-gradient-to-r from-[#5C45FF] via-violet-500 to-purple-700;
     animation: gradientbg 7.5s ease-in-out infinite;
   }
 

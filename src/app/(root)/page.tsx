@@ -1,25 +1,11 @@
-import Image from 'next/image'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import Search from '@/components/shared/Search'
 
 export default function Home() {
   return (
     <>
       <div className="search-container">
         <div className="search-main">
-          <div className="search-area">
-            {/* <div className="bg-white h-[50px] rounded-none rounded-l-md text-dark-600">11</div>
-            <div className="h-[50px] w-[90px] rounded-none rounded-r-md">22</div> */}
-            <Input className="search-field" placeholder="" /> 
-            <Button variant="destructive" className="search-button">
-              <Image
-                src="/assets/icons/search.svg"
-                alt="search"
-                width={22}
-                height={22}
-              />
-            </Button>
-          </div>
+          <Search />
           <div className="search-keyword"></div>
         </div>
       </div>
