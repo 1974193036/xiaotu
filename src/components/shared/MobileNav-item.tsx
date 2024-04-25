@@ -18,27 +18,28 @@ interface SideBarItemProps {
   }[]
 }
 
-const SiderBarItem = ({ list = [] }: SideBarItemProps) => {
+const MobileNavItem = ({ list = [] }: SideBarItemProps) => {
   const [activeId, setActiveId] = useState(list[0]?.id)
 
   return (
-    <ul className="sidebar-nav_elements">
+    <ul className="header-nav_elements">
       {list.map((item) => {
         const isActive = item.id === activeId
 
         return (
           <li
             key={item.id}
-            className={`sidebar-nav_element group ${isActive ? 'active' : ''}`}
+            className={`flex whitespace-nowrap text-dark-700 ${
+              isActive && 'gradient-text'
+            }`}
             onClick={() => setActiveId(item.id)}
           >
-            <div className="sidebar-link">
+            <div className="sidebar-link cursor-pointer">
               <Image
                 src={item.icon}
                 alt="logo"
                 width={24}
                 height={24}
-                className={`${isActive && 'brightness-200'}`}
               />
               {item.title}
             </div>
@@ -49,4 +50,4 @@ const SiderBarItem = ({ list = [] }: SideBarItemProps) => {
   )
 }
 
-export default SiderBarItem
+export default MobileNavItem
