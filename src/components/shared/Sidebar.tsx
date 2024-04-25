@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getNavApi } from '@/actions'
 import SiderBarItem from './Sidebar-Item'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 const SiderBar = async () => {
   const dataSource = await getNavApi()
@@ -18,9 +19,9 @@ const SiderBar = async () => {
           />
         </Link>
 
-        <nav className="sidebar-nav">
+        <ScrollArea className="sidebar-nav">
           <SiderBarItem list={dataSource} />
-        </nav>
+        </ScrollArea>
       </div>
     </aside>
   )

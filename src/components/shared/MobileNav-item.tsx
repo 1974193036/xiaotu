@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 interface SideBarItemProps {
   list: {
@@ -22,31 +23,28 @@ const MobileNavItem = ({ list = [] }: SideBarItemProps) => {
   const [activeId, setActiveId] = useState(list[0]?.id)
 
   return (
-    <ul className="header-nav_elements">
-      {list.map((item) => {
-        const isActive = item.id === activeId
+    <ScrollArea className="h-[88%]">
+      <ul className="header-nav_elements">
+        {list.map((item) => {
+          const isActive = item.id === activeId
 
-        return (
-          <li
-            key={item.id}
-            className={`flex whitespace-nowrap text-dark-700 ${
-              isActive && 'gradient-text'
-            }`}
-            onClick={() => setActiveId(item.id)}
-          >
-            <div className="sidebar-link cursor-pointer">
-              <Image
-                src={item.icon}
-                alt="logo"
-                width={24}
-                height={24}
-              />
-              {item.title}
-            </div>
-          </li>
-        )
-      })}
-    </ul>
+          return (
+            <li
+              key={item.id}
+              className={`flex whitespace-nowrap text-dark-700 ${
+                isActive && 'gradient-text'
+              }`}
+              onClick={() => setActiveId(item.id)}
+            >
+              <div className="sidebar-link cursor-pointer">
+                <Image src={item.icon} alt="logo" width={24} height={24} />
+                {item.title}
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+    </ScrollArea>
   )
 }
 

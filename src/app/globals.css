@@ -73,22 +73,6 @@
   body {
     @apply bg-background text-foreground;
   }
-
-  ::-webkit-scrollbar {
-    width: 7px;
-    height: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-radius: 0;
-  }
-  ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: rgb(144 147 153 / 30%);
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #b6b7b9;
-  }
 }
 
 .root {
@@ -197,7 +181,7 @@
   }
 
   .sidebar-nav {
-    @apply h-full flex-col justify-between pr-5 md:flex md:flex-1 md:gap-4 md:overflow-x-hidden md:overflow-y-auto;
+    @apply h-full flex-col justify-between pr-5 md:flex md:flex-1 md:gap-4;
   }
 
   .sidebar-nav_elements {
@@ -226,7 +210,7 @@
   }
 
   .header-nav_elements {
-    @apply mt-8 flex w-full flex-col items-start gap-5 h-[88%] overflow-x-hidden overflow-y-auto;
+    @apply mt-8 flex w-full flex-col items-start gap-5 h-full;
   }
 
   /* Search Component */
