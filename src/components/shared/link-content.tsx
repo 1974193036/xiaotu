@@ -3,7 +3,7 @@ import Image from 'next/Image'
 
 interface LinkContentProps {
   source: {
-    id: number
+    id: string
     title: string
     icon: string
     children: ChildContentProps[]
@@ -24,7 +24,7 @@ const LinkContent = ({ source }: LinkContentProps) => {
       <div className="link-content-inner">
         {source.map((category) => {
           return (
-            <div id={category.id + ''} key={category.id} className="mb-12">
+            <div id={category.id} key={category.id} className="mb-12">
               <div className="my-4">
                 <h1 className="link-content-title">
                   {category.title}

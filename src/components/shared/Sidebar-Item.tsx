@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import { useJumpPos } from '@/lib/useJumpPos'
 
 interface SideBarItemProps {
   list: {
-    id: number
+    id: string
     title: string
     icon: string
     children: {
@@ -20,6 +21,8 @@ interface SideBarItemProps {
 
 const SiderBarItem = ({ list = [] }: SideBarItemProps) => {
   const [activeId, setActiveId] = useState(list[0]?.id)
+
+  useJumpPos(activeId)
 
   return (
     <ul className="sidebar-nav_elements">

@@ -4,18 +4,19 @@ import { useState, KeyboardEvent } from 'react'
 import Image from 'next/image'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { openWindowBaidu } from '@/lib/openWindowBaidu'
+import { useRedirect } from '@/lib/useRedirect'
 
 const SiderBar = () => {
   const [inputValue, setInputValue] = useState('')
+  const { openBaidu } = useRedirect()
 
   const handleSearch = () => {
-    openWindowBaidu(inputValue)
+    openBaidu(inputValue)
   }
 
   const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      openWindowBaidu(inputValue)
+      openBaidu(inputValue)
     }
   }
 

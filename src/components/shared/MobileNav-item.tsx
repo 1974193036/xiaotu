@@ -3,10 +3,11 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { useJumpPos } from '@/lib/useJumpPos'
 
 interface SideBarItemProps {
   list: {
-    id: number
+    id: string
     title: string
     icon: string
     children: {
@@ -21,6 +22,8 @@ interface SideBarItemProps {
 
 const MobileNavItem = ({ list = [] }: SideBarItemProps) => {
   const [activeId, setActiveId] = useState(list[0]?.id)
+
+  useJumpPos(activeId)
 
   return (
     <ScrollArea className="h-[88%]">

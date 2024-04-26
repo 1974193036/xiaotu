@@ -353,7 +353,7 @@
   }
 
   .link-content-grid {
-    @apply grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3 2xl:grid-cols-4 2xl:gap-8;
+    @apply grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3 2xl:grid-cols-4 2xl:gap-8;
   }
 
   .link-item {
@@ -369,7 +369,7 @@
   }
 
   .link-item-title {
-    @apply flex-1 truncate text-xl font-bold text-primary;
+    @apply flex-1 truncate text-xl font-bold text-dark-600;
   }
 
   .link-item-desc {

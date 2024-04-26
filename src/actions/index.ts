@@ -8,7 +8,7 @@ export const getNavApi = cache(async () => {
   })
   return [
     {
-      id: 1,
+      id: 'rementuijian',
       title: '热门推荐',
       icon: '/assets/icons/home.svg',
       children: [
@@ -57,7 +57,7 @@ export const getNavApi = cache(async () => {
       ]
     },
     {
-      id: 8,
+      id: 'gaoqingtuku',
       title: '高清图库',
       icon: '/assets/icons/image.svg',
       children: [
@@ -92,7 +92,7 @@ export const getNavApi = cache(async () => {
       ]
     },
     {
-      id: 13,
+      id: 'shejijiaocheng',
       title: '设计教程',
       icon: '/assets/icons/stars.svg',
       children: [
@@ -155,31 +155,31 @@ export const getNavApi = cache(async () => {
       ]
     },
     {
-      id: 22,
+      id: 'shejijiaocheng22',
       title: '设计教程22',
       icon: '/assets/icons/stars.svg',
       children: []
     },
     {
-      id: 23,
+      id: 'shejijiaocheng23',
       title: '设计教程23',
       icon: '/assets/icons/stars.svg',
       children: []
     },
     {
-      id: 24,
+      id: 'shejijiaocheng24',
       title: '设计教程24',
       icon: '/assets/icons/stars.svg',
       children: []
     },
     {
-      id: 25,
+      id: 'shejijiaocheng25',
       title: '设计教程25',
       icon: '/assets/icons/stars.svg',
       children: []
     },
     {
-      id: 26,
+      id: 'shejijiaocheng26',
       title: '设计教程26',
       icon: '/assets/icons/stars.svg',
       children: []

@@ -4,11 +4,12 @@ import Image from 'next/image'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useState, useEffect } from 'react'
 import { getNewsApi } from '@/actions'
-import { openWindowBaidu } from '@/lib/openWindowBaidu'
+import { useRedirect } from '@/lib/useRedirect'
 
 const News = () => {
   const [news, setNews] = useState<{ id: string; title: string }[]>([])
   const [loading, setLoading] = useState(false)
+  const { openBaidu } = useRedirect()
 
   useEffect(() => {
     setLoading(true)
@@ -65,7 +66,7 @@ const News = () => {
                   </span>
                   <span
                     className="news-item_title"
-                    onClick={() => openWindowBaidu(item.title)}
+                    onClick={() => openBaidu(item.title)}
                   >
                     {item.title}
                   </span>
