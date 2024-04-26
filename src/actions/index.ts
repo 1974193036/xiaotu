@@ -1,5 +1,11 @@
+import { cache } from 'react'
+
 // 获取导航数据
-export async function getNavApi() {
+export const getNavApi = cache(async () => {
+  console.log('getNavApi cache')
+  await new Promise((resolve) => {
+    setTimeout(resolve, 10)
+  })
   return [
     {
       id: 1,
@@ -107,7 +113,7 @@ export async function getNavApi() {
         {
           id: 16,
           title: 'UI Notes',
-          icon: '/assets/images/uinotes-icon.png',
+          icon: '/assets/images/godlywebsite-icon.png',
           desc: '收集了国内109 个App 23208 张截图，用于探索UI 设计趋势、做竞品分析',
           href: 'https://www.baidu.com'
         },
@@ -179,7 +185,7 @@ export async function getNavApi() {
       children: []
     }
   ]
-}
+})
 
 // 获取收买寄数据
 export async function getTopNavApi() {

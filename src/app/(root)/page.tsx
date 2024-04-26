@@ -1,11 +1,13 @@
-import { getTopNavApi } from '@/actions'
+import { getNavApi, getTopNavApi } from '@/actions'
 import Search from '@/components/shared/Search'
 import TopNav from '@/components/shared/TopNav'
 import News from '@/components/shared/News'
-
+import LinkContent from '@/components/shared/link-content'
 
 export default async function Home() {
-  const dataSource = await getTopNavApi()
+  const res = await Promise.all([getNavApi(), getTopNavApi()])
+  const navData = res[0]
+  const topData = res[1]
 
   return (
     <>
@@ -31,7 +33,7 @@ export default async function Home() {
       <div className="wrapper-inner">
         <div className="top-container">
           <div className="top-left" id="top-left">
-            {dataSource.map((item) => {
+            {topData.map((item) => {
               return <TopNav key={item.id} type={item.type} list={item.children} />
             })}
           </div>
@@ -40,7 +42,9 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="mt-5 lg:mt-0 text-[30px] h-[600px] bg-blue-300">回家</div>
+        <div className="link-container">
+          <LinkContent source={navData} />
+        </div>
       </div>
     </>
   )
