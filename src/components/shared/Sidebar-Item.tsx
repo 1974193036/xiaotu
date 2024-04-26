@@ -20,20 +20,30 @@ interface SideBarItemProps {
 }
 
 const SiderBarItem = ({ list = [] }: SideBarItemProps) => {
-  const [activeId, setActiveId] = useState(list[0]?.id)
+  const [activeObj, setActiveObj] = useState({
+    id: list[0]?.id,
+    type: 'click'
+  })
 
-  useJumpPos(activeId)
+  const handleClick = (id: string) => {
+    setActiveObj({
+      id,
+      type: 'click'
+    })
+  }
+
+  useJumpPos(activeObj, setActiveObj)
 
   return (
     <ul className="sidebar-nav_elements">
       {list.map((item) => {
-        const isActive = item.id === activeId
+        const isActive = item.id === activeObj.id
 
         return (
           <li
             key={item.id}
             className={`sidebar-nav_element group ${isActive ? 'active' : ''}`}
-            onClick={() => setActiveId(item.id)}
+            onClick={handleClick.bind(null, item.id)}
           >
             <div className="sidebar-link">
               <Image

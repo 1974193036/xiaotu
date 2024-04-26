@@ -21,7 +21,7 @@ interface ChildContentProps {
 const LinkContent = ({ source }: LinkContentProps) => {
   return (
     <div className="link-content">
-      <div className="link-content-inner">
+      <div className="link-content-inner" id="link-content-inner">
         {source.map((category) => {
           return (
             <div id={category.id} key={category.id} className="mb-12">

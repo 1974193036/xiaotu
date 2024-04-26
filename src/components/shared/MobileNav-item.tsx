@@ -21,15 +21,25 @@ interface SideBarItemProps {
 }
 
 const MobileNavItem = ({ list = [] }: SideBarItemProps) => {
-  const [activeId, setActiveId] = useState(list[0]?.id)
+  const [activeObj, setActiveObj] = useState({
+    id: list[0]?.id,
+    type: 'click'
+  })
 
-  useJumpPos(activeId)
+  const handleClick = (id: string) => {
+    setActiveObj({
+      id,
+      type: 'click'
+    })
+  }
+
+  useJumpPos(activeObj, setActiveObj)
 
   return (
     <ScrollArea className="h-[88%]">
       <ul className="header-nav_elements">
         {list.map((item) => {
-          const isActive = item.id === activeId
+          const isActive = item.id === activeObj.id
 
           return (
             <li
@@ -37,7 +47,7 @@ const MobileNavItem = ({ list = [] }: SideBarItemProps) => {
               className={`flex whitespace-nowrap text-dark-700 ${
                 isActive && 'gradient-text'
               }`}
-              onClick={() => setActiveId(item.id)}
+              onClick={handleClick.bind(null, item.id)}
             >
               <div className="sidebar-link cursor-pointer">
                 <Image src={item.icon} alt="logo" width={24} height={24} />
