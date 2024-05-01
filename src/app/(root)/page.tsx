@@ -3,6 +3,7 @@ import Search from '@/components/shared/Search'
 import TopNav from '@/components/shared/TopNav'
 import News from '@/components/shared/News'
 import LinkContent from '@/components/shared/link-content'
+import Footer from '@/components/shared/footer'
 
 export default async function Home() {
   const res = await Promise.all([getNavApi(), getTopNavApi()])
@@ -45,6 +46,8 @@ export default async function Home() {
         <div className="link-container">
           <LinkContent source={navData} />
         </div>
+
+        <Footer />
       </div>
     </>
   )
